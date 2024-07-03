@@ -33,11 +33,11 @@ def get_weather(city):
 
 @app.route('/api/hello', methods=['GET'])
 def hello():
+    visitor_name =  request.args.get('visitor_name')
     client_ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
     location = get_location(client_ip)
     temperature = get_weather(location)
     greeting = f"Hello, {visitor_name}!, the temperature is {temperature} degrees Celsius in {location}"
-    visitor_name client_ip =  request.args.get('visitor_name')
     if visitor_name:
         user_data = {
             'client_ip': client_ip,
