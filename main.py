@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 def get_weather(city):
     #
-    api_key = '7a81d3c9c1b11b4cbf1a898da335b1af'
+    api_key = ''
     response = requests.get(
         f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric')
     if response.status_code == 200:
